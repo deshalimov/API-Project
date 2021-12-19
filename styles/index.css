@@ -8,6 +8,7 @@ html, body {
   height: 100%;
 }
 
+
 .head{
   background-color: #F5F5F5;
   color: #4D4B4B;
@@ -49,7 +50,6 @@ html, body {
 .button{
   font-family: 'Roboto';
   height: 27px;
-  
   width: 102px;
   display: flex;
   border-top: 1px solid #999999;
