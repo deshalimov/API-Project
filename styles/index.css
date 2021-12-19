@@ -49,6 +49,7 @@ html, body {
 .button{
   font-family: 'Roboto';
   height: 27px;
+  
   width: 102px;
   display: flex;
   border-top: 1px solid #999999;
