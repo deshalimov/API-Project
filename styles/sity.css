@@ -1,0 +1,96 @@
+/* Разметка для одного города */
+.oneSity{
+    border-top: 1px solid #999999;
+    border-right: 1px solid #999999;
+    border-left: 1px solid #999999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .oneSity:hover{
+    background-color: #f5f5f5;
+  }
+  
+  .oneSity:first-child{
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+  
+  .oneSity:last-child{
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom: 1px solid #999999;
+  }
+  
+  .img{
+    width: 35px;
+    height: 35px;
+    border-radius:8px; 
+    margin: 8px;
+  } 
+  
+  .nameSity{
+    width: 270px;
+    font-style: 'Roboto';
+    font-size: 20px;
+  }
+  
+  .removeSity{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-right: 16px;
+  }
+  
+  .oneSity:hover .removeSity{
+    
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.414 10L15.707 5.707C16.098 5.316 16.098 4.684 15.707 4.293C15.316 3.902 14.684 3.902 14.293 4.293L10 8.586L5.70701 4.293C5.31601 3.902 4.68401 3.902 4.29301 4.293C3.90201 4.684 3.90201 5.316 4.29301 5.707L8.58601 10L4.29301 14.293C3.90201 14.684 3.90201 15.316 4.29301 15.707C4.48801 15.902 4.74401 16 5.00001 16C5.25601 16 5.51201 15.902 5.70701 15.707L10 11.414L14.293 15.707C14.488 15.902 14.744 16 15 16C15.256 16 15.512 15.902 15.707 15.707C16.098 15.316 16.098 14.684 15.707 14.293L11.414 10Z' fill='%23A5A5A5'/%3e%3c/svg%3e ");
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
+  .oneSity .removeSity:hover{
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.414 10L15.707 5.707C16.098 5.316 16.098 4.684 15.707 4.293C15.316 3.902 14.684 3.902 14.293 4.293L10 8.586L5.70701 4.293C5.31601 3.902 4.68401 3.902 4.29301 4.293C3.90201 4.684 3.90201 5.316 4.29301 5.707L8.58601 10L4.29301 14.293C3.90201 14.684 3.90201 15.316 4.29301 15.707C4.48801 15.902 4.74401 16 5.00001 16C5.25601 16 5.51201 15.902 5.70701 15.707L10 11.414L14.293 15.707C14.488 15.902 14.744 16 15 16C15.256 16 15.512 15.902 15.707 15.707C16.098 15.316 16.098 14.684 15.707 14.293L11.414 10Z' fill='%23252526'/%3e%3c/svg%3e ");
+  }
+  
+  .favoriteSity{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-right: 16px;
+  }
+  
+  .oneSity:hover .favoriteSity{
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='16' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M6 0C9.31371 0 12 2.68629 12 6C12 9.31371 9.31371 12 6 12C2.68629 12 0 9.31371 0 6C0 2.68629 2.68629 0 6 0ZM8.29289 3.29289L5 6.58579L3.70711 5.29289C3.31658 4.90237 2.68342 4.90237 2.29289 5.29289C1.90237 5.68342 1.90237 6.31658 2.29289 6.70711L4.29289 8.70711C4.68342 9.09763 5.31658 9.09763 5.70711 8.70711L9.70711 4.70711C10.0976 4.31658 10.0976 3.68342 9.70711 3.29289C9.31658 2.90237 8.68342 2.90237 8.29289 3.29289Z' fill='%23BFCCE0'/%3e%3c/svg%3e ");  
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
+  .oneSity .favoriteSity:hover{
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='16' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M6 0C9.31371 0 12 2.68629 12 6C12 9.31371 9.31371 12 6 12C2.68629 12 0 9.31371 0 6C0 2.68629 2.68629 0 6 0ZM8.29289 3.29289L5 6.58579L3.70711 5.29289C3.31658 4.90237 2.68342 4.90237 2.29289 5.29289C1.90237 5.68342 1.90237 6.31658 2.29289 6.70711L4.29289 8.70711C4.68342 9.09763 5.31658 9.09763 5.70711 8.70711L9.70711 4.70711C10.0976 4.31658 10.0976 3.68342 9.70711 3.29289C9.31658 2.90237 8.68342 2.90237 8.29289 3.29289Z' fill='%23252526'/%3e%3c/svg%3e ");
+  }
+
+.sity{
+  width: 400px;
+}
+
+[data-tooltip]::after {
+  border: 1px solid #999999;
+  border-radius: 4px;
+  content: attr(data-tooltip); /* Выводим текст */
+  background: #dcdddd; /* Синий цвет фона */
+  color: rgb(29, 28, 28); /* Цвет текста */
+  padding: 3px; /* Поля вокруг текста */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
+  pointer-events: none; /* Подсказка */
+  opacity: 0; /* Подсказка невидима */
+  visibility: hidden; /* И скрыта */
+  transition: 1s; /*Время появления подсказки */
+ } 
+ [data-tooltip]:hover::after {
+  opacity: 1; /* Показываем подсказку */
+  visibility: visible;
+  
+ }
+    /* Разметка для одного города */
