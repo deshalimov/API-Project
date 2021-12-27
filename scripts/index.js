@@ -6,6 +6,9 @@ const MethodGet = 'GET';
 Fetch(urlSity, MethodGet)
 
 const topButton = document.querySelector('.buttonPanel')
+const main = document.querySelector('.main')
+main.style.background = '#2a4aff'
+main.style.color = 'white'
 
 topButton.addEventListener('click', function(e) {
     
@@ -19,11 +22,10 @@ topButton.addEventListener('click', function(e) {
         {
             topButton.children[i].style.background = ''
             topButton.children[i].style.color = ''
-            
         }
-
         i++
     }
+    OpenTab(e.target)
     
     //e.target.style.color = '#2a4aff'
 })
@@ -34,24 +36,7 @@ OutElements();
 
 //console.log(Fetch(urlSity, MethodGet));
 })
-// функция отрисовки элементов
-// function AddContainerToDo(text){
 
-//     let elementCheckBox = document.createElement('div')
-//     elementCheckBox.className = 'elementCheckBox'
-    
-//     let divcheckbox = document.createElement('div')
-//     divcheckbox.className = 'checkbox'
-
-//     let divtext = document.createElement('div')
-//     divtext.className = 'text'
-//     divtext.innerText = text.text
-
-//     let divdel = document.createElement('div')
-//     divdel.className = 'del'
-    
-//   }
-  
 
 
 function Fetch(Url, Metod)
@@ -95,4 +80,34 @@ function OutElements(){
 
         
     });
+}
+
+function OpenTab(element){
+    const div = document.querySelector('.sity')
+    if(element.className === "button main")
+    {
+        removeElement(div.children.length, '.oneSity')
+        OutElements()
+    }
+    if(element.className === "button favourites")
+    {
+        removeElement(div.children.length, '.oneSity')
+    }
+    if(element.className === "button remote")
+    {
+        removeElement(div.children.length, '.oneSity')
+    }
+
+}
+
+function removeElement(i, classname)
+{
+    if(i>0)
+    while( i > 0)
+    {
+        const oneSity = document.querySelector(classname)
+        oneSity.remove()
+        i--
+        //console.log(i + " " + div.children.length)
+    }
 }
