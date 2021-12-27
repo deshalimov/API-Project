@@ -74,23 +74,4 @@
 .sity{
   width: 400px;
 }
-
-[data-tooltip]::after {
-  border: 1px solid #999999;
-  border-radius: 4px;
-  content: attr(data-tooltip); /* Выводим текст */
-  background: #dcdddd; /* Синий цвет фона */
-  color: rgb(29, 28, 28); /* Цвет текста */
-  padding: 3px; /* Поля вокруг текста */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
-  pointer-events: none; /* Подсказка */
-  opacity: 0; /* Подсказка невидима */
-  visibility: hidden; /* И скрыта */
-  transition: 1s; /*Время появления подсказки */
- } 
- [data-tooltip]:hover::after {
-  opacity: 1; /* Показываем подсказку */
-  visibility: visible;
-  
- }
     /* Разметка для одного города */

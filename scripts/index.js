@@ -3,7 +3,10 @@ document.addEventListener('DOMContentLoaded', function () {
 const urlSity = 'https://devrel.rndtech.pro/api/cities';
 const MethodGet = 'GET';
 
+Fetch(urlSity, MethodGet)
+
 const topButton = document.querySelector('.buttonPanel')
+
 topButton.addEventListener('click', function(e) {
     
     e.target.style.background  = '#2a4aff'
@@ -16,6 +19,7 @@ topButton.addEventListener('click', function(e) {
         {
             topButton.children[i].style.background = ''
             topButton.children[i].style.color = ''
+            
         }
 
         i++
