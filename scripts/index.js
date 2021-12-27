@@ -64,11 +64,11 @@ function OutElements(){
 
         let favoriteSity = document.createElement('div')
         favoriteSity.className = 'favoriteSity'
-        favoriteSity.setAttribute('data-tooltip', 'Добавить в избранное.')
+        //favoriteSity.setAttribute('data-tooltip', 'Добавить в избранное.')
 
         let removeSity = document.createElement('div')
         removeSity.className = 'removeSity'
-        removeSity.setAttribute('data-tooltip', 'Удалить.')
+        //removeSity.setAttribute('data-tooltip', 'Удалить.')
 
         let Sity = document.querySelector('.sity')
         Sity.append(oneSity)
