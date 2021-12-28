@@ -68,6 +68,7 @@ function OutElements(){
 
         let favoriteSity = document.createElement('div')
         favoriteSity.className = 'favoriteSity'
+        //favoriteSity.style.backgroundImage = 'url("data:image/svg+xml,%3Csvg width=\'12\' height=\'12\' viewBox=\'0 0 12 12\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath fill-rule=\'evenodd\' clip-rule=\'evenodd\' d=\'M7.41401 6.00001L11.707 1.70701C12.098 1.31601 12.098 0.684006 11.707 0.293006C11.316 -0.0979941 10.684 -0.0979941 10.293 0.293006L6.00001 4.58601L1.70701 0.293006C1.31601 -0.0979941 0.684006 -0.0979941 0.293006 0.293006C-0.0979941 0.684006 -0.0979941 1.31601 0.293006 1.70701L4.58601 6.00001L0.293006 10.293C-0.0979941 10.684 -0.0979941 11.316 0.293006 11.707C0.488006 11.902 0.744006 12 1.00001 12C1.25601 12 1.51201 11.902 1.70701 11.707L6.00001 7.41401L10.293 11.707C10.488 11.902 10.744 12 11 12C11.256 12 11.512 11.902 11.707 11.707C12.098 11.316 12.098 10.684 11.707 10.293L7.41401 6.00001Z\' fill=\'%23F04F2B\'/%3E%3C/svg%3E%0A");'
         //favoriteSity.setAttribute('data-tooltip', 'Добавить в избранное.')
 
         let removeSity = document.createElement('div')
@@ -89,9 +90,8 @@ function OutElements(){
             {
                 const del = localStorage.getItem('Deleted')
                 array = JSON.parse(del)
-                
+                array.push(name)   
             }
-            array.push(name)
             localStorage.setItem('Deleted',JSON.stringify(array))
             e.target.parentNode.remove()
         })
@@ -101,11 +101,15 @@ function OutElements(){
             let array = []
             if (localStorage.getItem('Favourite')!=null)
             {
-                const f = localStorage.getItem('Favourite')
-                array = JSON.parse(f)
+                
+                array = JSON.parse(localStorage.getItem('Favourite'))
+                if(array.filter(x => name.includes(x)).length === 0)
+                array.push(name)
             }
-            array.push(name)
+            
             localStorage.setItem('Favourite',JSON.stringify(array))
+            //e.target.style.backgroundImage = 'url("data:image/svg+xml,%3Csvg width=\'12\' height=\'12\' viewBox=\'0 0 12 12\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath fill-rule=\'evenodd\' clip-rule=\'evenodd\' d=\'M7.41401 6.00001L11.707 1.70701C12.098 1.31601 12.098 0.684006 11.707 0.293006C11.316 -0.0979941 10.684 -0.0979941 10.293 0.293006L6.00001 4.58601L1.70701 0.293006C1.31601 -0.0979941 0.684006 -0.0979941 0.293006 0.293006C-0.0979941 0.684006 -0.0979941 1.31601 0.293006 1.70701L4.58601 6.00001L0.293006 10.293C-0.0979941 10.684 -0.0979941 11.316 0.293006 11.707C0.488006 11.902 0.744006 12 1.00001 12C1.25601 12 1.51201 11.902 1.70701 11.707L6.00001 7.41401L10.293 11.707C10.488 11.902 10.744 12 11 12C11.256 12 11.512 11.902 11.707 11.707C12.098 11.316 12.098 10.684 11.707 10.293L7.41401 6.00001Z\' fill=\'%23F04F2B\'/%3E%3C/svg%3E%0A");'
+           
 
         })
         
@@ -226,40 +230,23 @@ function outFavoutiteElements()
         nameSity.className = 'nameSity'
         nameSity.innerText = element
 
-        //let favoriteSity = document.createElement('div')
-        //favoriteSity.className = 'favoriteSity'
-        //favoriteSity.setAttribute('data-tooltip', 'Добавить в избранное.')
-
         let removeSity = document.createElement('div')
-        removeSity.className = 'removeSity'
-        //removeSity.style.background = 'url("data:image/svg+xml,%3Csvg width=\'12\' height=\'12\' viewBox=\'0 0 12 12\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath fill-rule=\'evenodd\' clip-rule=\'evenodd\' d=\'M7.41401 6.00001L11.707 1.70701C12.098 1.31601 12.098 0.684006 11.707 0.293006C11.316 -0.0979941 10.684 -0.0979941 10.293 0.293006L6.00001 4.58601L1.70701 0.293006C1.31601 -0.0979941 0.684006 -0.0979941 0.293006 0.293006C-0.0979941 0.684006 -0.0979941 1.31601 0.293006 1.70701L4.58601 6.00001L0.293006 10.293C-0.0979941 10.684 -0.0979941 11.316 0.293006 11.707C0.488006 11.902 0.744006 12 1.00001 12C1.25601 12 1.51201 11.902 1.70701 11.707L6.00001 7.41401L10.293 11.707C10.488 11.902 10.744 12 11 12C11.256 12 11.512 11.902 11.707 11.707C12.098 11.316 12.098 10.684 11.707 10.293L7.41401 6.00001Z\' fill=\'%23F04F2B\'/%3E%3C/svg%3E%0A");'
-        
+        removeSity.className = 'removeSity'  
         
         let Sity = document.querySelector('.sity')
         Sity.append(oneSity)
         oneSity.prepend(removeSity)
-        //oneSity.prepend(favoriteSity)
         oneSity.prepend(nameSity)
         oneSity.prepend(image)
 
         removeSity.addEventListener('click', function(e) {
             const name = e.target.parentNode.querySelector('.nameSity').innerHTML
-            //const deleted = localStorage.getItem('Deleted')
-            /*let array = []
-            if (localStorage.getItem('Deleted')!=null)
-            {
-                const del = localStorage.getItem('Deleted')
-                array = JSON.parse(del)
-                console.log(array)
-            }
-            array.push(name)
-            localStorage.setItem('Deleted',JSON.stringify(array))*/
-            const del = JSON.parse(localStorage.getItem('Deleted'))
+            const fav = JSON.parse(localStorage.getItem('Favourite'))
             const array = []
-            del.forEach(element => {
+            fav.forEach(element => {
                 if(name !== element) array.push(element)
             });
-            localStorage.setItem('Deleted', JSON.stringify(array))
+            localStorage.setItem('Favourite', JSON.stringify(array))
             e.target.parentNode.remove()
         })
 
